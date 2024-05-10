@@ -10,4 +10,6 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     boolean existsByChatId(String chatId);
 
     User findByChatId(String chatId);
+
+    User getUserByFistNameAndLastName(String firstName,String lastName);
 }
