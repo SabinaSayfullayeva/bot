@@ -211,7 +211,7 @@ public class UserService {
         String skills = update.getMessage().getText();
         user.setSkills(skills);
         userRepository.save(user);
-        SendMessage sendMessage = new SendMessage(getChatId(update), "Enter your experience : ");
+        SendMessage sendMessage = new SendMessage(getChatId(update), "Necha yil malakaga egasiz : ");
         sendMessage.setReplyMarkup(new ReplyKeyboardRemove(true));
         restTemplate.postForObject(RestConstants.FOR_MESSAGE, sendMessage, Object.class);
         setUserState(longChatId(update), BotState.LOCATION);
@@ -225,7 +225,7 @@ public class UserService {
         String experience = update.getMessage().getText();
         user.setExperience(experience);
         userRepository.save(user);
-        SendMessage sendMessage = new SendMessage(getChatId(update), "Enter your location : ");
+        SendMessage sendMessage = new SendMessage(getChatId(update), "Manzilingizni kiriting : ");
         sendMessage.setReplyMarkup(new ReplyKeyboardRemove(true));
         restTemplate.postForObject(RestConstants.FOR_MESSAGE, sendMessage, Object.class);
         setUserState(longChatId(update), BotState.DOCTOR_PHONE);
